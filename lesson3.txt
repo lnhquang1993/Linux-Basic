@@ -1,0 +1,130 @@
+ls commands :
+
+List all file and directory contained in the current working directory
+
+[quang@at10e ~]$ ls
+Desktop    Downloads  Music     Public     Videos
+Documents  Github     Pictures  Templates
+
+We can use ls to list multiple directories. In this exam we will list the user's home directory (symbolized  by the ~ character ) and the /user directory :
+
+[quang@at10e ~]$ ls ~ /usr/
+/home/quang:
+Desktop    Downloads  Music     Public     Videos
+Documents  Github     Pictures  Templates
+
+/usr/:
+bin  etc  games  include  lib  lib64  libexec  local  sbin  share  src  tmp
+
+Many commands allow multiple short options to to be strung together.
+
+[quang@at10e ~]$ ls -lt
+total 4
+drwxr-xr-x. 2 quang quang 4096 Nov 30 12:13 Desktop
+drwxr-xr-x. 2 quang quang   79 Nov 30 12:08 Downloads
+drwxr-xr-x  3 root  root    35 Nov 30 11:04 Github
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Music
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Pictures
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Videos
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Documents
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Public
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Templates
+
+Its also support long options. We add the long option --reverse to reverse the oder of the sort :
+
+[quang@at10e ~]$ ls -lt --reverse
+total 4
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Templates
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Public
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Documents
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Videos
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Pictures
+drwxr-xr-x. 2 quang quang    6 Nov 22 13:41 Music
+drwxr-xr-x  3 root  root    35 Nov 30 11:04 Github
+drwxr-xr-x. 2 quang quang   79 Nov 30 12:08 Downloads
+drwxr-xr-x. 2 quang quang 4096 Nov 30 12:13 Desktop
+
+The most common are listed below :
+
+	-a 		-all 	 : list all files, even those  with names that begin  with a period, which are normal not listed [i.e., hidden].
+
+	-d 		-directory : Ordinarily, if a directory is specified, ls will list the contents of the directory, not itself.  Use this option  on conjunction with the -l option to see details about  the directory rather than its contents.
+
+	-F 		--Classify : This option will append an indicator character to the end of each listed name (for example, a forward slash if the name is a directory).
+
+	-h 		--human-readable : In long format listings, display file sizes in human-readable format rather than in bytes.
+
+	-l 		: Display results in long format
+
+	-r 		--reverse : Display the results in reverse oder. Normally, ls displays its results in ascending alpha-betical order.
+
+	-S 		: Sort results by file size
+
+	-t 		: Sort by modification time.
+
+
+file command : 
+
+Determining a File's Type 
+
+[quang@at10e Desktop]$ file Hoc-Perl.pdf 
+Hoc-Perl.pdf: PDF document, version 1.5
+
+less command :
+
+The less command is a program to view text files.
+
+[quang@at10e ~]$ less /etc/passwd
+
+Directories Found on Linux Systems :
+
+/ 		:	The root directory, where everything begins.
+/bin 	:	Contains binaries (programs) that must be present for the system to boot and run.
+/boot 	:	Contains the linux kermel, initial RAM disk image (for drivers needed at boot time), and the boot loader.
+		Interesting files:
+		/boot/grub/grub.conf or menu.lst, which are used to configure the boot loader
+		/boot/vnlinuz, the Linux kernel
+/dev 	: 	This is a special directory that contains device nodes. "Everything is a file" also applies to devices. 			Here is where the kernel maintains a list of all the devices it understands.
+/etc 	: 	The /etc directory contains all of the system-wide configuration files. It also contains a collection 				of shell scripts that start each of system services at boot time.
+			Everything in this directory should be readable text.
+
+			Interesting files : While everything in /etc is interesting, here are some of my all-time favorites :
+			+ /etc/crontab, a file that defines when automated jobs will run
+			+ /etc/fstab, a table of stogare devices and their associated mount points.
+			+ /etc/passwd, a list of the user accounts
+/home 	: 	In normal configurations, each user is given a directory in /home. Ordinary users can write files only 				in their home directories. This limitations protects the system from errant user activity.
+/lib 	: 	Contains shared libary files used by the core system programs. These are similar to DLLs in Windows.
+/lost+found : 	Each formatted partition or device using a Linux file-system, such as ext3, will have this 							dictonary. It is used in the case of a partial recovery from a file-system corruption event. Unless 				something really bad happend to your system, this directory will remain empty.
+/media 	:	On modern Linux systems the /media directory will contain the mount the mount point for removable media 			such as USB drivers, CD-ROMs, etc. That are mounted  automatically at insertion.
+/mnt 	: 	On older Linux systems the /mnt directory contains mount points for removable devices that have been 				mounted manually.
+/opt 	: 	The /opt directory is used to install "optional" software. This is mainly used to hold commercial 					software products that may be installed in your system.
+/proc 	: 	The /proc directory is special. It's not a real filesystem in the sense of files stored on your hard 				drive. Rather, it is a virtual filesystem maintained  by the linux kernel itself. The file are readable 			and will give you a picture of how the kernel sees your computer.
+/root 	: 	This is the home directory for the root account.
+/sbin 	: 	This directory contains "system" binaries. These are programs that perform vital system tasks that are				programs that gererally reserved for the superuser.
+/tmp 	: 	The /tmp directory is intended for stogare of temporary, transient file created by various programs. 				Some configurations cause this directories to be emptied each time the system is rebooted.
+/usr 	:	The /usr directory tree is likely the largest one on a Linux system. It contains all the programs and 				support files used by regular users.
+/usr/bin :	/usr/bin contains the executable programs installed by your Linux distribution. It is not uncommon for 				this directory to hold thousands of programs.
+/usr/lib :	The shared libaries for the programs in /usr/bin.
+/usr/local :	The /usr/local tree is where programs installed by your linux distribution but are intended for 					system-wide use are installed. programs compiled from source code are normally installed in /usr/					local/bin. On a newly installed Linux system, this tree exits, but it will be empty untill the 						system administrator  put something in it.
+/usr/sbin :		Contains more system administrator programs.
+/usr/share :	/usr/share contains all the shared data  used by programs in /usr/bin. This includes things  like 					default configurations files, icons, screen backgrounds, sound file, etc.
+/usr/share/doc : 	Most packages installed on the system will include some kind of documentation files, icons, 						screen backgrounds, sound files, etc.
+/var :		With the exception of /tmp and /home, the directories we have looked at so far remain relatively  static			; that is, their contents don't change. The /var directory tree is where data that likely to change is 				stored. Various database, spool files, user mail,etc are located here.
+/var/log :	/var/log contains log file, records of various system activity. These are very important and should be 				monitored from time to time. The most useful one is /var/log/messages. Note that for security reasons 				on some systems, you must be the superuser to view log file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

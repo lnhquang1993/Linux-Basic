@@ -1,0 +1,44 @@
+#date command :
+
+This command show displays the current time and date
+
+[quang@at10e ~]$ date
+Mon Nov 30 09:32:12 ICT 2015
+
+#cal command :
+
+Display a calendar of current month and bold black current day :
+
+[quang@at10e ~]$ cal
+    November 2015   
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30
+
+#df command :
+
+Displays the current amount of free space on your disk drivers :
+[quang@at10e ~]$ df
+Filesystem              1K-blocks    Used Available Use% Mounted on
+/dev/mapper/centos-root  18298880 5897772  12401108  33% /
+devtmpfs                  1883020       0   1883020   0% /dev
+tmpfs                     1892892   50936   1841956   3% /dev/shm
+tmpfs                     1892892    9268   1883624   1% /run
+tmpfs                     1892892       0   1892892   0% /sys/fs/cgroup
+/dev/sda7                  505580  172376    333204  35% /boot
+
+#free command :
+
+Displays the amount of free memory :
+
+[quang@at10e ~]$ free
+              total        used        free      shared  buff/cache   available
+Mem:        3785788     1142612     1575484      283912     1067692     2086372
+Swap:       2097148           0     2097148
+
+
+
+

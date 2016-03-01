@@ -1,0 +1,29 @@
+pwd command :
+
+Displays current working directory
+
+[quang@at10e home]$ pwd
+/home
+
+ls command :
+
+List the file and directories in the current working directory
+
+[quang@at10e home]$ ls
+kumar  quang  senthil  thongchodien
+
+cd command : 
+
+Change your working directory :
+
+[quang@at10e home]$ cd /usr/bin/
+[quang@at10e bin]$ ls
+[                                    mlabel
+a2p                                  mmcli
+ab                                   mmc-tool
+
+	Some Helpful Shortcuts
+	cd 				|	Changes the working directory to your home directory
+	cd -			|	Changes the working directory to the previous working directory
+	cd ~usename		|	Changes the working directory to the home directory of usename
+
