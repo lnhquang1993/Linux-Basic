@@ -39,6 +39,6 @@ Displays the amount of free memory :
 Mem:        3785788     1142612     1575484      283912     1067692     2086372
 Swap:       2097148           0     2097148
 
-
+       
 
 
